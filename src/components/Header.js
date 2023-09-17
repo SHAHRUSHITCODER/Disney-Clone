@@ -1,6 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
-function Header() {
+// import {auth,provider} from '../firebase';
+
+function Header(props) {
+  // const handleAuth = () => {
+  //   auth.signInWithPopup(provider)
+  //     .then((result) => {
+  //       console.log(result);
+  //     })
+  //     .catch((error) => {
+  //       alert(error.message);
+  //     });
+  // };
+  const signout=()=>
+  {
+    window.location.href = '/login';
+
+  }
+    
   return (
     <Nav>
       <Logo src="/images/logo.svg" />      
@@ -30,10 +47,10 @@ function Header() {
           <span>SERIES</span>
         </a>
       </NavMenu>
-      {/* <Subscribe>
-        <button class="subscribe " >SUBSCRIBE</button>
-      </Subscribe> */}
-      <UserImg src="/images/Shinchan.jpg" />
+      
+      <UserImg onClick={signout} src="/images/Shinchan.jpg" />
+      
+      
     </Nav>
   )
 }

@@ -1,14 +1,27 @@
 import React from 'react'
 import styled from 'styled-components'
+import {auth,provider} from '../firebase';
 
-function Login() {
+
+function Login(props) {
+  const handleAuth = () => {
+    auth.signInWithPopup(provider)
+      .then((result) => {
+        console.log(result);
+        window.location.href = '/';
+
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+    }
   return (
     <BackGround>
       <CTA>
         <img src="/images/cta-logo-one.svg" alt="" />
       </CTA> 
       <GetButton>
-        <button className='button'>GET ALL THERE</button>
+        <button className='button' onClick={handleAuth}>GET ALL THERE</button>
       </GetButton>  
       <Description >
       Get Premier Access to Raya and the Last Dragon for an additional fee with a Disney+ subscription. As of 24/02/22, the price of Disney and The Disney Bundle will increase by $1.

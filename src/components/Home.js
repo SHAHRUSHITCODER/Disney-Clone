@@ -3,25 +3,10 @@ import styled from 'styled-components';
 import ImgSlider from '../components/ImgSlider'; // Update the import path
 import Viewers from '../components/Viewers';
 import Movies from'../components/Movies';
-import db from '../firebase';
 // import { collection, getDocs } from "firebase/firestore";
 function Home() {
-  async function  Rushit()
-  {
-    
-    db.collection("movies").onSnapshot((snapshot)=>
-    {
-      console.log(snapshot.docs);
-    })
-  }
-  useEffect(()=>
-  
-  {
-    Rushit();
-  
-    
-  },[])
-           
+
+        
   return (
     <Container>
       <ImgSlider />
